@@ -7,7 +7,7 @@ module Flyticket
       include HTTParty
 
       def self.get_struct(path, args)
-        response = get(path, query: args)
+        response = get path, query: args
         OpenStruct.new(response)
       end
     end

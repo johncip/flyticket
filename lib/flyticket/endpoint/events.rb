@@ -6,11 +6,11 @@ module Flyticket
       base_uri 'www.ticketfly.com/api/events'
 
       def self.upcoming(args)
-        get_struct '/upcoming.json', args
+        get_struct('/upcoming.json', args)
       end
 
       def self.past(args)
-        get_struct '/past.json', args
+        get_struct('/past.json', args)
       end
     end
   end
