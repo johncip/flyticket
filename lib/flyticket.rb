@@ -1,4 +1,5 @@
 require 'flyticket/client'
+require 'flyticket/version'
 
 module Flyticket
   def self.client
