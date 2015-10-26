@@ -9,5 +9,5 @@ Full instructions to follow.
 
 ### License
 
-(c) 2015 John Cipriano and licensed under the MIT license. See [LICENSE](https://github.com/johncip/flyticket/blob/master/LICENSE)
+See [LICENSE](https://github.com/johncip/flyticket/blob/master/LICENSE)
 for details.
