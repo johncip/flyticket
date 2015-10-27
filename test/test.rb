@@ -1,11 +1,12 @@
 require 'flyticket'
 require 'flyticket/client'
-require 'pp'
 require 'ostruct'
+require 'pp'
 
-client = Flyticket.client
-response = client.upcoming_events(orgId: 747)
-event = response['events'].first
-os = OpenStruct.new(event)
+fc = Flyticket.client
 
-pp os.org
+upcoming = fc.upcoming_events(orgId: 747)
+p upcoming.first.headlinersName # --> headliner for this org's next event
+
+past = fc.past_events(venueId: 1, maxResults: 5)
+pp past.first.to_json  # --> description for this venue's last event

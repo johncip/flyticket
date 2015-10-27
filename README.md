@@ -1,6 +1,7 @@
 # Flyticket
 
-A Ruby gem for communicating with the [Ticketfly REST API](http://start.ticketfly.com/api/).
+A Ruby gem for communicating with the [Ticketfly REST API](http://start.ticketfly.com/api/), built
+on [HTTParty](https://github.com/jnunemaker/httparty).
 
 ## Installation
 
@@ -18,9 +19,30 @@ Or install it yourself as:
 
     $ gem install flyticket
 
-## Usage
+## Example Usage
 
-Full instructions to follow.
+Flyticket is still a work in progress, however, to query for events,
+grab the provided instance of Flyticket::Client and use its methods like so:
+
+```
+fc = Flyticket.client
+
+upcoming = fc.upcoming_events(orgId: 747)
+upcoming.first.headlinersName # --> headliner for org's next event
+
+past = fc.past_events(venueId: 1, maxResults: 5)
+past.first.facebookEventId  # --> FB event id for this venue's last event
+```
+
+#### Some useful properties:
+* orgId
+* venueId
+* eventId
+* maxResults (capped at 1000)
+* pageNum (required when total results > maxResults)
+* fromDate
+* thruDate
+
 
 ## Development
 

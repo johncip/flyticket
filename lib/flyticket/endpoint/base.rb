@@ -6,9 +6,12 @@ module Flyticket
     class Base
       include HTTParty
 
-      def self.get_struct(path, args)
-        response = get path, query: args
-        OpenStruct.new(response)
+      def self.get_many(fragment, query)
+        response = get fragment, query: query
+
+        response[@key].map do |hash|
+          OpenStruct.new(hash)
+        end
       end
     end
   end
