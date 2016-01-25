@@ -1,3 +1,5 @@
+/fixtures/
+
 *.gem
 *.rbc
 /.config
