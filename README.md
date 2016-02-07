@@ -22,16 +22,14 @@ Or install it yourself as:
 ## Example Usage
 
 Flyticket is still a work in progress, however, to query for events,
-grab the provided instance of Flyticket::Client and use its methods like so:
+use it like so:
 
 ```
-fc = Flyticket.client
+upcoming = Flyticket::Events.upcoming(venueId: 1, maxResults: 3)
+upcoming.first.venue.name  # --> 'Brooklyn Bowl'
 
-upcoming = fc.upcoming_events(orgId: 747)
-upcoming.first.headlinersName # --> headliner for org's next event
-
-past = fc.past_events(venueId: 1, maxResults: 5)
-past.first.facebookEventId  # --> FB event id for this venue's last event
+past = Flyticket::Events.past(venueId: 1, maxResults: 3)
+past.first.facebook_event_id  # --> FB event id for this venue's last show
 ```
 
 #### Some useful properties:
@@ -43,6 +41,17 @@ past.first.facebookEventId  # --> FB event id for this venue's last event
 * fromDate
 * thruDate
 
+## Notes
+
+I haven't committed to an API just yet and won't attempt semantic versioning
+until I do.
+
+#### TODO
+* [ ] use snake case for options
+* [ ] handle error response
+* [ ] make original json available
+* [ ] handle fields & fieldGroup
+* [ ] specs
 
 ## Development
 
@@ -53,7 +62,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/johncip/flyticket.
-
 
 ## License
 
