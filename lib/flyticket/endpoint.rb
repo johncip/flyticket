@@ -7,6 +7,8 @@ require 'ostruct'
 require 'plissken'
 
 require 'flyticket/ticketfly_error'
+require 'flyticket/util'
+
 module Flyticket
   class Endpoint
     include HTTParty
@@ -15,19 +17,28 @@ module Flyticket
       base_uri.split('/').last
     end
 
-    def self.get_many(fragment, query)
-      response = get fragment, query: query
+    # Gets a single event
+    def self.get_many(fragment, options)
+      response = get fragment, query: query_string(options)
+
       handle_error(response)
       response[key].map { |hash| objectify(hash) }
     end
 
-    def self.get_one(fragment, query)
-      response = get fragment, query: query
+    # Gets a single event
+    def self.get_one(fragment, options)
+      response = get fragment, query: query_string(options)
+
       handle_error(response)
       objectify response[key].first
     end
 
     private
+
+    # Camelcases the given options hash.
+    def self.query_string(options)
+      options.map { |k, v| [Util.camelize(k, false), v] }.to_h
+    end
 
     # Converts keys to snake case, then "semi-recursively" converts to OpenStruct.
     def self.objectify(hash)
