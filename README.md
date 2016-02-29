@@ -35,7 +35,7 @@ upcoming.first.venue.name  # --> 'Brooklyn Bowl'
 
 Note how in the first example, `image` is a method, but deeper properties are
 accessed using hash keys. In the second example, because `venue` is a struct,
-the venue name can be accessed using a method (although `[:name]` works too]).
+the venue name can be accessed using a method (although `[:name]` works too).
 
 #### Some useful properties:
 * org_id
