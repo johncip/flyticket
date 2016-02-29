@@ -41,7 +41,7 @@ the venue name can be accessed using a method (although `[:name]` works too]).
 * org_id
 * venue_id
 * event_id
-* max_results (capped by TicketFly at 1000)
+* max_results (capped by Ticketfly at 1000)
 * page_num (use when total results > max_results)
 * from_date
 * thru_date
@@ -53,6 +53,7 @@ I haven't committed to an API just yet and won't attempt semantic versioning unt
 #### TODO
 * [ ] make original json available
 * [ ] handle fields & fieldGroup
+* [ ] if ticketfly paginates, fetch extra & concatenate
 * [ ] specs
 
 ## Contributing
