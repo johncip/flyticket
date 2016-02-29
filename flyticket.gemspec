@@ -36,7 +36,6 @@ Gem::Specification.new do |spec|
   # racing stripes
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "pry-coolline", "~> 0.2"
-  spec.add_development_dependency "awesome_print", "~> 1.6"
 
   spec.add_runtime_dependency "plissken", "~> 0.2"
   spec.add_runtime_dependency "httparty", "~> 0.13"
