@@ -13,6 +13,7 @@ module Flyticket
   class Endpoint
     include HTTParty
 
+    # Returns the key used to get the list of entries from Ticketfly's response.
     def self.key
       base_uri.split('/').last
     end
