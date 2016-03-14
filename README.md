@@ -1,5 +1,6 @@
 # Flyticket
 
+[![Gem Version](https://badge.fury.io/rb/flyticket.svg)](https://badge.fury.io/rb/flyticket)
 [![Build Status](https://travis-ci.org/johncip/flyticket.svg?branch=master)](https://travis-ci.org/johncip/flyticket)
 
 A Ruby gem for communicating with the [Ticketfly REST API](http://start.ticketfly.com/api/), built
