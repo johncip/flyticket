@@ -8,9 +8,8 @@ on [HTTParty](https://github.com/jnunemaker/httparty).
 
 I want to hear from you! Let me know if you're finding Flyticket useful, or if
 you have suggestions on what would make it useful for your project. I'm
-currently using it to develop a new website for a Ticketfly "org" so my use case
-is pretty narrow. I just wanted a nice wrapper for the API, and the gems I
-looked at were defunct.
+currently using it to develop a new website for a Ticketfly "org." I just wanted
+a nice wrapper for the API, and the gems I looked at were defunct.
 
 ## Example Usage
 
