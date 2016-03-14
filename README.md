@@ -1,5 +1,7 @@
 # Flyticket
 
+[![Build Status](https://travis-ci.org/johncip/flyticket.svg?branch=master)](https://travis-ci.org/johncip/flyticket)
+
 A Ruby gem for communicating with the [Ticketfly REST API](http://start.ticketfly.com/api/), built
 on [HTTParty](https://github.com/jnunemaker/httparty).
 
