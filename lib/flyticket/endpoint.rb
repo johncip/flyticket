@@ -18,7 +18,7 @@ module Flyticket
       base_uri.split('/').last
     end
 
-    # Gets a single event
+    # Gets many events
     def self.get_many(fragment, options)
       response = get fragment, query: query_string(options)
 
@@ -57,7 +57,7 @@ module Flyticket
     end
 
     # Raises an error if the response indicates a problem.
-    def self.handle_error
+    def self.handle_error(response)
       if response['status'] == 'error'
         raise TicketflyError.new(response)
       end

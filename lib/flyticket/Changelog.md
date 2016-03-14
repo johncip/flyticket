@@ -1,3 +1,7 @@
+### 0.1.3 / March 13, 2016
+
+* Fixed: handle_error signature
+
 ### 0.1.2 / February 28, 2016
 
 * Add support for snake_case query arguments
