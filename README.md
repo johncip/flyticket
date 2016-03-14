@@ -11,8 +11,7 @@ looked at were defunct.
 
 ## Example Usage
 
-Flyticket is still a work in progress, however, to query for events,
-use it like so:
+To query for events, use it like so:
 
 ```ruby
 past = Flyticket::Events.past(venue_id: 1, max_results: 3)
@@ -20,10 +19,9 @@ past.first.facebook_event_id  # --> FB event id for this venue's last show
 ```
 
 Flyticket is opinionated about the result format -- it discards Ticketfly's
-outer wrapper (used for pagination) and converts the top-level event hashes into
-OpenStructs, as well as the nested org and venue hashes, but leaves deeper
-properties as hashes. Thus retrieving a deeply-nested attributes looks like
-this:
+outer wrapper (used for pagination) and converts the top-level hashes and
+the nested org and venue hashes into OpenStructs, leaving deeper hashes alone.
+So retrieving a deeply-nested attributes looks like this:
 
 ```ruby
 next_event = Flyticket::Events.upcoming(venue_id: 1, max_results: 1).first
@@ -37,6 +35,16 @@ Note how in the first example, `image` is a method, but deeper properties are
 accessed using hash keys. In the second example, because `venue` is a struct,
 the venue name can be accessed using a method (although `[:name]` works too).
 
+#### Endpoints:
+* Events.list(options)
+* Events.upcoming(options)
+* Events.featured(options)
+* Events.past(options)
+* Events.just_announced(options)
+* Events.event(options)
+* Orgs.list(options)
+* Venues.list(options)
+
 #### Some useful properties:
 * org_id
 * venue_id
@@ -48,7 +56,8 @@ the venue name can be accessed using a method (although `[:name]` works too).
 
 ## Notes
 
-I haven't committed to an API just yet and won't attempt semantic versioning until I do.
+Not attempting semantic versioning just yet because the API may change. (In particular,
+I may roll my own classes instead of using OpenStruct).
 
 #### TODO
 * [ ] make original json available
